@@ -50,15 +50,18 @@ $app->get('/getAvailPlaces', function() use ($app){
             'type' => $map->type
         ];
     }
-    echo json_encode($result);
+    //echo json_encode($result)
 
+    return response(json_encode($result))
+        ->header('Access-Control-Allow-Origin', '*');
 });
 
 $app->get('/saveNewSeat/{reservationNr}/{seat}', function() use ($app){
     $response = [
         'status' => 'ON_WAIT'
     ];
-    echo json_encode($response);
+    return response(json_encode($response))
+        ->header('Access-Control-Allow-Origin', '*');
 });
 
 
@@ -96,8 +99,8 @@ $app->get('/getFlightInfo/{id}', function($id) use ($app){
         'altitude'  => $response->getFlightInfo[0]->altitude . ' feet',
         'flightStatus' => $response->getFlightInfo[0]->status
     ];
-    echo json_encode($result);
-
+    return response(json_encode($result))
+        ->header('Access-Control-Allow-Origin', '*');
 });
 
 /*
@@ -136,7 +139,8 @@ $app->get('/getFlightDetails/{id}', function($id) use ($app){
         'seat' => "16C",
         'birthday' => '13.07.1982'
     ];
-    echo json_encode($result);
+    return response(json_encode($result))
+        ->header('Access-Control-Allow-Origin', '*');
 });
 
 $app->get('/spotify', function() use ($app){
@@ -157,7 +161,8 @@ $app->get('/spotify', function() use ($app){
 
     $result = (array)$response->playlists_by_search_term[0];
 
-    echo json_encode($result);
+    return response(json_encode($result))
+        ->header('Access-Control-Allow-Origin', '*');
 });
 
 

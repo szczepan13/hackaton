@@ -11,7 +11,6 @@ class XapiProvider{
         $this->headers = array(
             "Accept"        => "application/json",
             "Authorization" => "ab16_Fru:8401dG7jyYJxXirqKI3DvSz094f5g96a",
-            "Access-Control-Allow-Origin" => '*'
         );
 
         $this->url = self::PROVIDER_URL;
