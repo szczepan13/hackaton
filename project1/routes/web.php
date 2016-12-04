@@ -154,15 +154,10 @@ $app->get('/spotify', function() use ($app){
     ];
 
     $response = $xapi->buildUrl('playlists_by_search_term', 'spotify')->addParams($params)->execute();
-    $result = [];
-    foreach($response->playlist_by_search_term[0] as $playlist){
-        $result[] = $playlist;
-    }
-    print('<pre>');
-    var_dump($result);
 
+    $result = (array)$response->playlists_by_search_term[0];
 
-
+    echo json_encode($result);
 });
 
 
