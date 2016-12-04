@@ -1,0 +1,32 @@
+
+
+http://project1.local/getFlightDetails/{reservationNr}
+{
+ "departureDate": "2017-02-11",
+ "departureTime": "15:05",
+ "seat": "16C",
+ "birthday": "13.07.1982"
+}
+
+
+http://project1.local/getFlightInfo/{flightId}
+{
+ "speed":"256 knots",
+ "altitude":"25000 feet",
+ "flightStatus":"15 min delayed"
+}
+
+http://project1.local/getAvailPlaces
+[
+    { "row": 12, "seat": "B", "type": "free" },
+    { "row": 14, "seat": "C", "type": "swap" }
+]
+
+http://project.local/saveNewSeat/{reservationNr}/{seat}
+{
+ "status":"ON_WAIT"
+}
+
+
+project1.local 10.174.197.116
+
